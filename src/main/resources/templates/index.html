@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>网上鲜花销售系统</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.head{
+				width: 100%;
+				height: 100px;
+				background: grey;
+			}
+			.head .logo{
+				position: absolute;
+				height: 40px;
+				/* margin: 30px 0 0 10%; */
+				top: 30px;
+				left: 10%;
+			}
+			.head .title{
+				position: absolute;
+				font-size: 30px;
+				font-family: arial;
+				top: 30px;
+				left: 50%;
+				color: rgb(215,73,29); 	 	
+			}
+			.head .login{
+				position: absolute;
+				font-size:16px;
+				font-family: arial;
+				top: 40px;
+				right: 5%;
+				color: deepskyblue;
+			}
+			/* 主内容界面 */
+			.nav{
+				width: 100%;
+				height: 540px;
+				background: whitesmoke;
+			}
+			.foot{
+				width: 100%;
+				height: 42px;
+				background: deepskyblue;
+			}
+			.foot .copyright{
+				line-height: 42px;
+				background: lightgray;
+				color: darkslategray;
+				text-align: center;
+			}
+			.menu{
+				width: 100%;
+				height: 70px;
+			}
+			.menu .menu-list{
+				float: right;
+				width: 10%;
+				height: 50px;
+				background: ghostwhite;
+				text-align: center;
+				line-height: 50px;
+				margin: 10px;
+				border: #00FFFF 1px solid;
+				border-radius: 10px;
+			}
+			.menu .menu-list-temp{
+				float: right;
+				width: 14%;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				margin: 10px;
+			}
+			.menu .menu-list:hover{
+				background-color: orange;
+			}
+			a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<img class="logo" src="img/logo-shop-red.png" />
+			<div class="title">网上鲜花销售系统</div>
+			<div class="login"><a href="login">登录</a></div>
+		</div>
+		<div class="menu">
+			<ul class="menu-list-temp"></ul>
+			<ul class="menu-list">鲜花主页</ul>
+			<ul class="menu-list">私人定制</ul>
+			<ul class="menu-list">鲜花大促</ul>
+			<ul class="menu-list">我的收藏</ul>
+			<ul class="menu-list">鲜花花语</ul>
+			<ul class="menu-list">私人定制</ul>
+		</div>
+		<div class="nav">
+			
+		</div>
+		<div class="foot">
+			<div class="copyright">copyright: genfu  email: eather_liang@163.com</div>
+		</div>
+	</body>
+</html>

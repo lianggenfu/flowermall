@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ssmdemo.mapper.AdminMapper">
+
+    <select id="findAll" resultType="com.example.ssmdemo.model.Admin">
+        SELECT *
+        FROM admin
+    </select>
+    <select id="findById" parameterType="long" resultType="com.example.ssmdemo.model.Admin">
+        SELECT *
+        FROM admin
+        WHERE  id = #{0}
+    </select>
+</mapper>

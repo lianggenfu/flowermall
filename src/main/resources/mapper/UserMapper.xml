@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ssmdemo.mapper.UserMapper">
+
+    <select id="findAll" resultType="com.example.ssmdemo.model.User">
+        SELECT *
+        FROM ssmuser
+    </select>
+    <select id="findById" parameterType="long" resultType="com.example.ssmdemo.model.User">
+        SELECT *
+        FROM ssmuser
+        WHERE  id = #{0}
+    </select>
+    <insert id="create" parameterType="com.example.ssmdemo.model.User" keyProperty="id"
+            useGeneratedKeys="true">
+        INSERT INTO ssmuser(
+        id,
+        username,
+        age,
+        createTime,
+        creater
+        )
+        VALUES (
+        #{id},
+        #{username},
+        #{age},
+        NOW(),
+        #{creater}
+        )
+        <selectKey resultType="long" keyProperty="id">
+            SELECT @@IDENTITY AS id;
+        </selectKey>
+    </insert>
+    <update id="update" parameterType="com.example.ssmdemo.model.User">
+        UPDATE ssmuser
+        SET
+        id = #{id},
+        username = #{username},
+        age = #{age},
+        createTime = #{createTime},
+        creater = #{creater}
+        WHERE id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<title>用户管理</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.table {
+				border: 1px solid gray;
+			}
+
+			.table tr {
+				width: 200px;
+				border: 1px solid gray;
+			}
+
+			.table th {
+				border: 1px solid gray;
+			}
+
+			.addbutton {
+				width: 100px;
+				height: 40px;
+				background: lightgray;
+				border: #00FFFF 0.0625rem solid;
+				border-radius: 10px;
+				margin-left: 70%;
+			}
+			.nomalbutton {
+				width: 60px;
+				height: 40px;
+				background: lightgray;
+				border: #00FFFF 0.0625rem solid;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 align="center">用户管理</h1>
+		<a class="addbutton" href="addUser">添加用户</a>
+		<center>
+			<table border="1" width="60%" bgcolor="#e9faff">
+				<caption>&nbsp;</caption>
+				<thead th:remove="all-but-first">
+				<tr align="center">
+					<th height="60px">用户id</th>
+					<th>用户名</th>
+					<th>年龄</th>
+					<th>创建时间</th>
+					<th>创建人</th>
+					<th>操作</th>
+				</tr>
+				</thead>
+
+				<tbody>
+				<tr align="center" th:each="obj, objStat: ${users}">
+					<td height="60px" th:text="${objStat.count}"></td>
+					<td th:text="${obj.username}">语文</td>
+					<td th:text="${obj.age}">语文</td>
+					<td th:text="${obj.createTime}">语文</td>
+					<td th:text="${obj.creater}">语文</td>
+					<td>
+						<button class="nomalbutton" onclick="deleteUser()">编辑</button>&nbsp;&nbsp;
+						<button class="nomalbutton">删除</button>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</center>
+	</body>
+</html>
